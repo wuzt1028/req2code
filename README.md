@@ -12,10 +12,16 @@
 npx skills add wuzt1028/req2code
 ```
 
+网络受限、HTTPS 克隆失败时，改用 SSH 源：
+
+```bash
+npx skills add git@github.com:wuzt1028/req2code.git
+```
+
 手动安装：
 
 ```bash
-git clone https://github.com/wuzt1028/req2code.git ~/.agents/skills/req2code
+git clone git@github.com:wuzt1028/req2code.git ~/.agents/skills/req2code
 # Claude Code 用户补一个软链
 ln -s ~/.agents/skills/req2code ~/.claude/skills/req2code
 ```
