@@ -1,0 +1,28 @@
+{
+  "id": "13-build-only-verification",
+  "title": "只有构建通过：不能把 6/7 标完成",
+  "input": "后端编译通过、前端 build 通过，把 6/7 标完成并进入验收。",
+  "context": {
+    "existing_state": "6/7 进行中",
+    "verification": "build-only"
+  },
+  "expected": {
+    "triggered": true,
+    "mode": "full",
+    "gate": "required",
+    "must": [
+      "指出 build-only 不是功能验证",
+      "要求 automated/manual 证据",
+      "否则保持进行中/待确认"
+    ],
+    "must_not": [
+      "把 6/7 标已完成",
+      "把构建通过当作验收通过"
+    ]
+  },
+  "rationale": "真实运行里只有 mvn compile / pnpm build，这是最容易放水的地方。",
+  "metrics": [
+    "gate_integrity",
+    "verification_quality"
+  ]
+}

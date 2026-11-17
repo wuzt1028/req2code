@@ -1,0 +1,32 @@
+{
+  "id": "01-small-fix-fast",
+  "title": "单点修复应走 fast，不建流水线产物",
+  "input": "把导出按钮的文案从“导出”改成“导出 CSV”，只改一个前端文件。",
+  "context": {
+    "repo": "有一个前端仓库",
+    "existing_state": null,
+    "note": "≤2 文件、无接口/数据/交互契约变化"
+  },
+  "expected": {
+    "triggered": true,
+    "mode": "fast",
+    "gate": "n/a",
+    "must": [
+      "说明 fast 适用边界",
+      "按仓库约定做验证（测试/构建）",
+      "报告改动与验证结果"
+    ],
+    "must_not": [
+      "创建 docs/ai-coding 产物",
+      "进入 PRD/设计/用例停靠",
+      "跳过验证"
+    ]
+  },
+  "rationale": "fast 的存在就是为了避免小改动被 10 个阶段拖死。",
+  "metrics": [
+    "trigger",
+    "mode_selection",
+    "artifact_budget",
+    "verification"
+  ]
+}

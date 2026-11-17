@@ -1,0 +1,36 @@
+{
+  "id": "08-missing-skills",
+  "title": "外部 skill 缺失：降级不阻塞",
+  "input": "按全流程做这个需求，但环境里没有 prd-writing / anti-ui-slop。",
+  "context": {
+    "available_skills": [
+      "grilling",
+      "code-review"
+    ],
+    "missing": [
+      "prd-writing",
+      "anti-ui-slop",
+      "frontend-design"
+    ]
+  },
+  "expected": {
+    "triggered": true,
+    "mode": "full",
+    "gate": "required",
+    "must": [
+      "使用内置 rubric 继续",
+      "首次降级时一次性告知缺失清单",
+      "在产物标 Fallback"
+    ],
+    "must_not": [
+      "因缺 skill 停止流程",
+      "反复提醒缺失"
+    ]
+  },
+  "rationale": "DSH 环境常缺增强 skill，降级是默认路径。",
+  "metrics": [
+    "trigger",
+    "fallback_behavior",
+    "human_intervention"
+  ]
+}

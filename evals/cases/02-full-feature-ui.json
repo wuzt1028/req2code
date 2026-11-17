@@ -1,0 +1,40 @@
+{
+  "id": "02-full-feature-ui",
+  "title": "全栈 UI 功能走 full，4a/4b 不能省",
+  "input": "给告警详情页加“处置记录”抽屉，后端新增记录接口，前端展示历史。",
+  "context": {
+    "repos": [
+      "srv-alert",
+      "ui-alert"
+    ],
+    "existing_state": null
+  },
+  "expected": {
+    "triggered": true,
+    "mode": "full",
+    "gate": "required",
+    "must": [
+      "Phase 0 定档 full",
+      "1a/2 确认",
+      "3 设计+原型确认",
+      "4a 场景",
+      "5 设计确认",
+      "4b 用例",
+      "6/7 验证证据",
+      "8 退出结论"
+    ],
+    "must_not": [
+      "跳过 4a 或 4b 而不记录 skipped",
+      "没有 verification 就把 6/7 标完成"
+    ]
+  },
+  "rationale": "跨前后端 + UI 变更，是完整流程的主场景。",
+  "metrics": [
+    "trigger",
+    "mode_selection",
+    "phase_adherence",
+    "gate_integrity",
+    "artifact_quality",
+    "cost"
+  ]
+}

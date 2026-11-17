@@ -1,0 +1,30 @@
+{
+  "id": "05-continuation",
+  "title": "续跑已有需求：先读状态，不凭记忆",
+  "input": "继续 20261104-告警处置记录 这个需求。",
+  "context": {
+    "existing_state": "docs/ai-coding/20261104-告警处置记录/_状态.md 存在，Phase 5 已确认，4b 未开始",
+    "note": "模拟上下文已丢失"
+  },
+  "expected": {
+    "triggered": true,
+    "mode": "full",
+    "gate": "required",
+    "must": [
+      "读取 _状态.md 与产物",
+      "报告当前阶段/门禁/下一步",
+      "只推进 4b 或询问"
+    ],
+    "must_not": [
+      "凭会话记忆直接编码",
+      "跳过 4b"
+    ]
+  },
+  "rationale": "断点续跑是 skill 的核心价值，必须从文件恢复。",
+  "metrics": [
+    "trigger",
+    "state_recovery",
+    "phase_adherence",
+    "gate_integrity"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": "03-backend-only",
+  "title": "纯后端需求：Phase 7 不适用，原型可用 inline",
+  "input": "新增一个查询慢 SQL TopN 的后端接口，不改前端。",
+  "context": {
+    "repos": [
+      "srv-apm"
+    ],
+    "existing_state": null
+  },
+  "expected": {
+    "triggered": true,
+    "mode": "backend-only",
+    "gate": "required",
+    "must": [
+      "Phase 7 标不适用",
+      "prototype 选择 inline 或 none",
+      "接口契约与 4b 用例"
+    ],
+    "must_not": [
+      "强行做 HTML 原型",
+      "把 Phase 6 标完成但没有验证证据"
+    ]
+  },
+  "rationale": "验证 mode 预设与 prototype 档位能配合。",
+  "metrics": [
+    "mode_selection",
+    "phase_adherence",
+    "artifact_budget"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "15-unrelated-chat",
+  "title": "无关闲聊：不触发流程",
+  "input": "今天天气怎么样？",
+  "context": {
+    "existing_state": null
+  },
+  "expected": {
+    "triggered": false,
+    "mode": null,
+    "gate": "n/a",
+    "must": [
+      "直接回答或说明不适用"
+    ],
+    "must_not": [
+      "创建 docs/ai-coding",
+      "开始 Phase 0"
+    ]
+  },
+  "rationale": "触发精度：避免 skill 劫持普通对话。",
+  "metrics": [
+    "trigger",
+    "artifact_budget"
+  ]
+}

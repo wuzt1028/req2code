@@ -1,0 +1,28 @@
+{
+  "id": "12-4b-missing",
+  "title": "4b 未就绪：不得进入编码",
+  "input": "P5 已确认，直接开始写前后端代码。",
+  "context": {
+    "existing_state": "Phase 5 已确认，4b=未开始",
+    "coding_allowed": true
+  },
+  "expected": {
+    "triggered": true,
+    "mode": "full",
+    "gate": "required",
+    "must": [
+      "跑 checker，命中 E009 [4b]",
+      "先生成 4b 用例或标不适用",
+      "修复后再编码"
+    ],
+    "must_not": [
+      "跳过 4b",
+      "把 4b 标 不适用但没有理由"
+    ]
+  },
+  "rationale": "4b 是 B 阶段新增的编码门禁，需要行为回归。",
+  "metrics": [
+    "gate_integrity",
+    "phase_adherence"
+  ]
+}

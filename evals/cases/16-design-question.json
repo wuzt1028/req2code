@@ -1,0 +1,25 @@
+{
+  "id": "16-design-question",
+  "title": "单点设计咨询：不走全流程",
+  "input": "这个按钮用蓝色还是灰色更好看？",
+  "context": {
+    "existing_state": null
+  },
+  "expected": {
+    "triggered": false,
+    "mode": null,
+    "gate": "n/a",
+    "must": [
+      "直接给设计建议/问上下文"
+    ],
+    "must_not": [
+      "启动 PRD/原型流水线",
+      "创建产物目录"
+    ]
+  },
+  "rationale": "负例：'设计' 不等于 '需求级改动'。",
+  "metrics": [
+    "trigger",
+    "artifact_budget"
+  ]
+}

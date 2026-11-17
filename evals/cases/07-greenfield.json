@@ -1,0 +1,29 @@
+{
+  "id": "07-greenfield",
+  "title": "无仓库绿地模式：先确认技术栈/规范",
+  "input": "新做一个内部工具，还没有代码仓库。",
+  "context": {
+    "repos": [],
+    "existing_state": null
+  },
+  "expected": {
+    "triggered": true,
+    "mode": "full",
+    "gate": "required",
+    "must": [
+      "询问技术栈/目录结构/编码与 UI 规范",
+      "把约定写入 P0",
+      "以 P0 作为唯一约定来源"
+    ],
+    "must_not": [
+      "凭空假设框架",
+      "直接开始写代码"
+    ]
+  },
+  "rationale": "绿地模式最容易“AI 自己选一套技术栈”。",
+  "metrics": [
+    "trigger",
+    "mode_selection",
+    "artifact_quality"
+  ]
+}

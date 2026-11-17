@@ -1,0 +1,29 @@
+{
+  "id": "04-analysis-only",
+  "title": "只要 PRD：Phase 2 后停靠，不进入设计/编码",
+  "input": "先帮我把这个需求分析清楚，出一版 PRD，先不要做设计。",
+  "context": {
+    "existing_state": null
+  },
+  "expected": {
+    "triggered": true,
+    "mode": "analysis-only",
+    "gate": "n/a",
+    "must": [
+      "Phase 2 后停靠",
+      "输出 PRD 与评审要点",
+      "询问是否继续"
+    ],
+    "must_not": [
+      "进入 Phase 3",
+      "写代码",
+      "创建 P5/P8"
+    ]
+  },
+  "rationale": "单阶段停靠是常见用法，不能被“自动走完”破坏。",
+  "metrics": [
+    "trigger",
+    "mode_selection",
+    "phase_adherence"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "id": "06-interrupted",
+  "title": "会话中断/压缩后：重新自检并恢复",
+  "input": "（模拟）上下文压缩后，用户说“继续刚才那个需求”。",
+  "context": {
+    "existing_state": "docs/ai-coding/*/_状态.md 存在多个需求",
+    "note": "上下文里没有流程记忆"
+  },
+  "expected": {
+    "triggered": true,
+    "mode": "full",
+    "gate": "required",
+    "must": [
+      "扫描全部需求状态",
+      "列出未完成项并询问续跑哪个",
+      "重新加载 _状态.md"
+    ],
+    "must_not": [
+      "只取最近一个需求就继续",
+      "假设自己记得阶段"
+    ]
+  },
+  "rationale": "真实运行里出现过“状态与代码不一致”，恢复必须以文件为准。",
+  "metrics": [
+    "trigger",
+    "state_recovery",
+    "human_intervention"
+  ]
+}
